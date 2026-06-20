@@ -7,6 +7,7 @@ import ContactList from "../components/ContactList";
 import ChatContainer from "../components/ChatContainer";
 import NoConversation from "../components/NoConversation";
 import ChatList from "../components/ChatList";
+import { TextAlignJustifyIcon } from "lucide-react";
 
 const ChatPage = () => {
   const activeTab = useChatStore((state) => state.activeTab);
@@ -19,10 +20,10 @@ const ChatPage = () => {
       <AnimatedBorder>
         {/* Hamburger button (mobile only) */}
         {!isOpen && <button
-          className="absolute top-4 left-4 md:hidden z-50 text-white"
+          className="absolute top-8 left-4 md:hidden z-50 text-white"
           onClick={() => setIsOpen(true)}
         >
-          ☰
+          <TextAlignJustifyIcon/>
         </button>}
 
         {/* LEFT SIDE (Drawer) */}

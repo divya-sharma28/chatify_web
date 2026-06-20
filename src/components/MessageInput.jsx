@@ -68,7 +68,7 @@ const MessageInput = () => {
 
       <form
         onSubmit={handleSendMessage}
-        className="max-w-3xl mx-auto flex space-x-4"
+        className="max-w-3xl mx-auto flex space-x-2"
       >
         <input
           type="text"
@@ -78,7 +78,7 @@ const MessageInput = () => {
             isSoundOn && playRandomKeystrokeSound();
           }}
           placeholder="Type your message..."
-          className="flex-1 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-4"
+          className="sm:flex-1 bg-slate-800/50 border border-slate-700/50 rounded-lg p-2 w-full placeholder:text-sm"
         />
 
         <input
@@ -96,14 +96,14 @@ const MessageInput = () => {
             imagePreview ? "text-cyan-500" : ""
           }`}
         >
-          <ImageIcon className="w-5 h-5" />
+          <ImageIcon className="w-4 h-4" />
         </button>
         <button
           type="submit"
           disabled={!text.trim() && !imagePreview}
           className="bg-linear-to-r from-cyan-500 to-cyan-600 text-white rounded-lg px-4 py-2 font-medium hover:from-cyan-600 hover:to-cyan-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <SendIcon className="w-5 h-5" />
+          <SendIcon className="w-4 h-4" />
         </button>
       </form>
     </div>

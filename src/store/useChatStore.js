@@ -102,6 +102,8 @@ export const useChatStore = create((set, get) => ({
     if (!selectedUser) return;
     const socketio = useAuthStore.getState().socket;
 
+    if (!socketio) return; // socket not ready yet
+
     socketio.on("newMessage", (newMessage) => {
       const isMsgFrmSelectedUser = newMessage.senderID === selectedUser._id;
       if (!isMsgFrmSelectedUser) return;
@@ -119,6 +121,7 @@ export const useChatStore = create((set, get) => ({
   },
   unsubscribeFromMessage: () => {
     const socketio = useAuthStore.getState().socket;
+    if (!socketio) return;
     socketio.off("newMessage");
   },
 }));
