@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -7,6 +7,7 @@ import { useAuthStore } from "./store/useAuthStore";
 import DecorativeBg from "./components/DecorativeBg";
 import PageLoader from "./components/PageLoader";
 import { Toaster } from "react-hot-toast";
+import NotFound from "./pages/NotFound";
 function App() {
   const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
 
@@ -34,10 +35,10 @@ function App() {
             path="/signup"
             element={!authUser ? <SignupPage /> : <Navigate to={"/"} />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      <Toaster />
+        <Toaster />
       </div>
-
     </BrowserRouter>
   );
 }

@@ -9,7 +9,7 @@ import {
   UserIcon,
 } from "lucide-react";
 import AuthInput from "../components/AuthInput";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 const SignupPage = () => {
   const [formData, setFormData] = useState({
     fullname: "",

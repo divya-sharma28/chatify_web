@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import AnimatedBorder from "../components/AnimatedBorder";
 import { useAuthStore } from "../store/useAuthStore";
-import { LoaderIcon, LockIcon, MailIcon, MessageCircleIcon } from "lucide-react";
+import {
+  LoaderIcon,
+  LockIcon,
+  MailIcon,
+  MessageCircleIcon,
+} from "lucide-react";
 import AuthInput from "../components/AuthInput";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +49,6 @@ const LoginPage = () => {
 
                 {/* FORM */}
                 <form className="space-y-6" onSubmit={handleSubmit}>
-    
                   <AuthInput
                     name={"email"}
                     value={formData.email}
